@@ -135,10 +135,6 @@ int main(){
     rectangle rec(3,1);
     triangle tri(2,4,6,2);
 
-    if((c.area()==sqa.area()) && (c.perimeter()==c.perimeter())){
-        std::cout<<"100000";
-    }
-
     shape *s[4] = {
         new circle(3),
         new sqaure(2),
