@@ -5,47 +5,51 @@
 // Book, author, title, price, publisher and number of copies
 class Books
 {
+
 public:
-    std::string author;
+    std::string authorfirst;
+    std::string authorsecond;
     std::string tittle;
-    Books(std::string, std::string);
+    std::string publish_name;
+    std::string price;
+    std::string copies;
+    Books* buffer = nullptr;
+
+    Books();
+    ~Books();
     void print(){
-        std::cout << author << std::endl;
-        std::cout << tittle << std::endl;
+        std::cout << authorfirst << std::endl;
+        std::cout << authorsecond << std::endl;
+        std::cout << publish_name << std::endl;
+        std::cout << price << std::endl;
+        std::cout << copies << std::endl;
+        std::cout << std::endl;
     }
+
 };
-Books::Books(std::string aut, std::string titl)
+Books::Books()
 {
-    author= aut;
-    tittle= titl;
+ std::cout << "Enter Author First Name: ";
+ std::cin >> authorfirst;
+ std::cout << "Enter Author Second Name: ";
+ std::cin >> authorsecond;
+//  std::cout << "Enter Tittle Name: ";
+//  std::cin >> tittle;
+//  std::cout << "Enter Publisher Name: ";
+//  std::cin >> publish_name;
+//  std::cout << "Enter Price: ";
+//  std::cin >> price;
+//  std::cout << "Enter numbers of copies: ";
+//  std::cin >> copies;
+
+
+
+
 }
 
-// class It : public Books
-// {
-// public:
-//     It();
-// };
-
-// It::It()
-// {
-//     std::string author = "Stephen King";
-//     std::string tittle = "It";
-//     float price = 179;
-//     std::string publisher = "Viking";
-//     unsigned int copies = 200;
-// }
-
-// class Hobbit : public Books
-// {
-// public:
-//     Hobbit();
-// };
-
-// Hobbit::Hobbit()
-// {
-//     std::string author = "J.R.R Tolkien";
-//     std::string tittle = "The Hobbit";
-//     float price = 110;
-//     std::string publisher = "George Allen & Unwin";
-//     unsigned int copies = 200;
-// }
+Books::~Books()
+{
+    if (this->buffer != nullptr){
+        delete [] this->buffer;
+    }
+}
