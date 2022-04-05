@@ -9,15 +9,21 @@ int main(){
 
         meny_display();
         unsigned int num;
+        unsigned int numbersOfBook;
 
         std::cout << "Enter your choice: ";
         std::cin>>num;
 
         switch(num){
             case 1:
-                Books b;
-                std::cout<<"-----------------"<< b.buffer;
+                std::cout<<"how many books do you want to add?\n";
+                std::cin >> numbersOfBook;
+                Books* library;
 
+                for(int i=0; i < numbersOfBook; i++){
+                    Books* bok= new Books();
+                    library[i]= *bok;
+                }
         };
     };
 }

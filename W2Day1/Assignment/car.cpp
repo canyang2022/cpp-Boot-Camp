@@ -60,15 +60,12 @@ void serviceRecord::display(serviceRecord* array){
 
     std::cout<<"display payment amout "<< se.payment_amount<<std::endl;
 
-
-
 }
 
 
 int main(){
 
     unsigned int record_size;
-
 
     std::cout<<"Input how many record do you want to be saved: \n";
     std::cin>> record_size;
