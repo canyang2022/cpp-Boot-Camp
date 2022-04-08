@@ -7,48 +7,36 @@ you have generated -- print in ascending order.*/
 #include<iterator>
 int count=0;
 
+void print(std::map<int, int>::iterator);
+
 int main(){
 
-
-
     std::map<int, int> duplicateCount;
-    for(int i=0;i<10;i++){
+    for(int i=0;i<10000;i++){
 
-        int num = rand()%3;
-        //std::cout<< num << std::endl;
+        // random number generator
+        int num = rand()%34;
 
-        //std::cout<< "attension"<<duplicateCount.count(num)<<'\n';
-
-        if(duplicateCount.count(num)){
-            count+=1;
-            //std::cout<<"key    "<< num<<'\n';
-            //std::cout<<"cout    "<< duplicateCount<<'\n';
-
-        }else{
-            count=0;
-        }
-
+        // create a map with pointers
         std::map<int, int>::iterator itr;
         for (itr=duplicateCount.begin(); itr!=duplicateCount.end();++itr){
-        std::cout<< itr->first << "   "<< itr->second<< '\n';
-        if(duplicateCount.count(num)){
-            count += itr->second;
-            std::cout <<"new count"<< count<<'\n';
-        }
+            //std::cout<< itr->first << "   "<< itr->second<< '\n';
+
+            // If the number in the current iteration is found in the prvious stroage,
+            // increae the count for this number itself.
+            if(duplicateCount.find(itr->first)!=duplicateCount.end()){
+                itr->second += 1;
+            }
 
     }
-        std::cout<< "aftercondition"<<count<<'\n';
-
         duplicateCount.insert(std::pair<int, int>(num, count));
-        std::cout<< "aftercondition2 "<<count<<'\n';
-
-
     }
-    std::cout<< "print----------------------------------------\n";
-    std::map<int, int>::iterator itr;
-    for (itr=duplicateCount.begin(); itr!=duplicateCount.end();++itr){
-        std::cout<< itr->first << "   "<< itr->second<< '\n';
-
+   // print the final result.
+    std::cout << "\tNumber\tDumplicated_Times\n";
+    for(std::map<int, int>::iterator itr=duplicateCount.begin(); itr!=duplicateCount.end();++itr){
+        std::cout<< '\t'<<itr->first << "\t"<< itr->second<< '\n';
     }
 
 }
+
+
