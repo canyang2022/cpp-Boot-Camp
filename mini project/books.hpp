@@ -10,8 +10,8 @@ public:
     std::string authorsecond;
     std::string tittle;
     std::string publish_name;
-    std::string price;
-    std::string copies;
+    float price;
+    unsigned int copies;
 
     Book();
 };
@@ -24,12 +24,12 @@ Book::Book()
     std::cin >> authorsecond;
     std::cout << "Enter Tittle Name: ";
     std::cin >> tittle;
-//  std::cout << "Enter Publisher Name: ";
-//  std::cin >> publish_name;
-//  std::cout << "Enter Price: ";
-//  std::cin >> price;
-//  std::cout << "Enter numbers of copies: ";
-//  std::cin >> copies;
+    std::cout << "Enter Publisher Name: ";
+    std::cin >> publish_name;
+    std::cout << "Enter Price: ";
+    std::cin >> price;
+    std::cout << "Enter numbers of copies: ";
+    std::cin >> copies;
 
 
 }

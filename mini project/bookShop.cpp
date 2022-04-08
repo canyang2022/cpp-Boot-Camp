@@ -45,21 +45,33 @@ int main(){
                 std::string book_name;
                 std::string author_fir_name;
                 std::string author_sec_name;
+                unsigned int purchurs_amount;
+                float customer_payment;
+
                 std::cout<<"What is the name of the book you want to buy? \n";
                 std:: cin >> book_name;
                 std::cout<<"Enter author first name \n";
                 std:: cin >> author_fir_name;
                 std::cout<<"Enter author second name \n";
                 std:: cin >> author_sec_name;
+                std::cout << "how many books do you want?\n";
+                std::cin>> purchurs_amount;
+
                 for (int i=0; i< bookmark; i++){
                     if((library[i]->tittle == book_name)&&(library[i]->authorfirst == author_fir_name)
-                    &&(library[i]->authorsecond == author_sec_name)){
-                        std::cout<< "We have the book you want";
+                    &&(library[i]->authorsecond == author_sec_name)&&((library[i]->copies)>= purchurs_amount)){
+                        std::cout<< "We have the book you want, please type the amount you are paying\n";
+                        std::cin>>customer_payment;
+                        if(library[i]->price ==customer_payment){
+                            std::cout << "You have bought the book sucessfully!\n";
+                        }else{
+                            std::cout << "Please pay the correct amount!\n";
+                        }
                     }else
-                    {std::cout<<"Sorry, we dont have the book you want to buy now.\n";
+                    {
+                        std::cout<<"Sorry, we dont have the book you want to buy now.\n";
                     }
                 }
-
                 break;
             }
 
@@ -68,7 +80,7 @@ int main(){
 
 
         };
-        std::cout <<"authorname"<< library[bookmark-1];
+        //std::cout <<"authorname"<< library[bookmark-1];
     };
 }
 
@@ -83,3 +95,37 @@ void meny_display(){
 
 }
 
+/*void search_book(){
+    std::string book_name;
+    std::string author_fir_name;
+    std::string author_sec_name;
+    unsigned int purchurs_amount;
+    float customer_payment;
+
+    std::cout<<"What is the name of the book you want to buy? \n";
+    std:: cin >> book_name;
+    std::cout<<"Enter author first name \n";
+    std:: cin >> author_fir_name;
+    std::cout<<"Enter author second name \n";
+    std:: cin >> author_sec_name;
+    std::cout << "how many books do you want?\n";
+    std::cin>> purchurs_amount;
+
+    for (int i=0; i< bookmark; i++){
+        if((library[i]->tittle == book_name)&&(library[i]->authorfirst == author_fir_name)
+        &&(library[i]->authorsecond == author_sec_name)&&((library[i]->copies)>= purchurs_amount)){
+            std::cout<< "We have the book you want, please type the amount you are paying\n";
+            std::cin>>customer_payment;
+        if(library[i]->price ==customer_payment){
+            std::cout << "You have bought the book sucessfully!\n";
+        }else{
+            std::cout << "Please pay the correct amount!\n";
+         }
+        }else
+        {
+        std::cout<<"Sorry, we dont have the book you want to buy now.\n";
+        }
+
+
+
+}*/
