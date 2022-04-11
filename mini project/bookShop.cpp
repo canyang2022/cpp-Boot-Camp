@@ -12,6 +12,7 @@ in constructors to allocate memory space required. Implement C++ program for the
 
 
 void meny_display();
+void search_book(unsigned int, Book*);
 
 int main(){
 
@@ -60,27 +61,64 @@ int main(){
                 for (int i=0; i< bookmark; i++){
                     if((library[i]->tittle == book_name)&&(library[i]->authorfirst == author_fir_name)
                     &&(library[i]->authorsecond == author_sec_name)&&((library[i]->copies)>= purchurs_amount)){
-                        std::cout<< "We have the book you want, please type the amount you are paying\n";
+                        std::cout<< "We have the book you want, your total price is "<<(library[i]->price)* (purchurs_amount)<< ". Please type the amount you are paying\n";
                         std::cin>>customer_payment;
-                        if(library[i]->price ==customer_payment){
+                        if((library[i]->price*purchurs_amount) ==customer_payment){
                             std::cout << "You have bought the book sucessfully!\n";
-                        }else{
+                        }else if(library[i]->price*purchurs_amount < customer_payment){
+                            std::cout << "Thank you for the bonns. You have bought the book successfully!\n";
+
+                        }
+                        else{
                             std::cout << "Please pay the correct amount!\n";
                         }
                     }else
                     {
-                        std::cout<<"Sorry, we dont have the book you want to buy now.\n";
+                        std::cout<<"Sorry, Required copies are not in stock now.\n";
                     }
                 }
                 break;
             }
 
             case 3:
+            {
+                std::string book_name;
+                std::string author_fir_name;
+                std::string author_sec_name;
+                unsigned int purchurs_amount;
+                float customer_payment;
+
+                std::cout<<"Type the name of the book you are searching \n";
+                std:: cin >> book_name;
+                std::cout<<"Enter author first name \n";
+                std:: cin >> author_fir_name;
+                std::cout<<"Enter author second name \n";
+                std:: cin >> author_sec_name;
+
+                if(bookmark==0){
+                    std::cout<<"Sorry, we dont have the book you want to buy now.\n";
+
+                }
+
+                for (int i=0; i< bookmark; i++){
+                    if((library[i]->tittle == book_name)&&(library[i]->authorfirst == author_fir_name)
+                    &&(library[i]->authorsecond == author_sec_name)){
+                        std::cout<< "We found the book you are searching\n";
+                        std::cout << "The price is: "<<library[i]->price << ' kr\n';
+                        std::cout << "The copy is: "<< library[i]->copies<<'\n';
+                    }
+                    else
+                    {
+                        std::cout<<"Sorry, we dont have the book you want to buy now.\n";
+                    }
+
+                }
                 break;
+            }
+            case 4:
 
 
         };
-        //std::cout <<"authorname"<< library[bookmark-1];
     };
 }
 
@@ -95,37 +133,33 @@ void meny_display(){
 
 }
 
-/*void search_book(){
+void search_book(unsigned int bookmark, Book* library[]){
     std::string book_name;
     std::string author_fir_name;
     std::string author_sec_name;
     unsigned int purchurs_amount;
     float customer_payment;
 
-    std::cout<<"What is the name of the book you want to buy? \n";
+    std::cout<<"Type the name of the book you are searching \n";
     std:: cin >> book_name;
     std::cout<<"Enter author first name \n";
     std:: cin >> author_fir_name;
     std::cout<<"Enter author second name \n";
     std:: cin >> author_sec_name;
-    std::cout << "how many books do you want?\n";
-    std::cin>> purchurs_amount;
 
     for (int i=0; i< bookmark; i++){
         if((library[i]->tittle == book_name)&&(library[i]->authorfirst == author_fir_name)
-        &&(library[i]->authorsecond == author_sec_name)&&((library[i]->copies)>= purchurs_amount)){
-            std::cout<< "We have the book you want, please type the amount you are paying\n";
-            std::cin>>customer_payment;
-        if(library[i]->price ==customer_payment){
-            std::cout << "You have bought the book sucessfully!\n";
-        }else{
-            std::cout << "Please pay the correct amount!\n";
-         }
+        &&(library[i]->authorsecond == author_sec_name)){
+            std::cout<< "We found the book you are searching\n";
+            std::cout << "The price is: "<<library[i]->price << '\n';
+            std::cout << "The copy is: "<< library[i]->copies<<'\n';
         }else
         {
         std::cout<<"Sorry, we dont have the book you want to buy now.\n";
         }
 
+    }
 
 
-}*/
+
+}
