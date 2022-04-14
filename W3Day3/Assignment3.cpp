@@ -27,7 +27,7 @@ int main(){
 
 void generate_numbers(std::vector<int>* v)
 {
-    for(int i=0;i<100;i++){
+    for(int i=0;i<1000;i++){
 
         // random number generator
         int num = rand()%1000;
@@ -40,13 +40,13 @@ void generate_numbers(std::vector<int>* v)
 void search_number(std::vector<int>* v, int number){
 
    std::vector<int>::iterator upper, lower;
-   (*v).erase(upper, lower);
+   //(*v).erase(upper, lower);
    upper=std::upper_bound((*v).begin(),(*v).end(),number);
    lower=std::lower_bound((*v).begin(),(*v).end(),number);
     //(*v).erase(upper, lower);
 
 
-   std::cout<<"The upper bound is: "<<upper[0]<<'\n';
-   std::cout<<"The lower bound is: "<<lower[0]<<'\n';
+   std::cout<<"The upper bound is: "<<*upper<<'\n';
+   std::cout<<"The lower bound is: "<<*(lower-1)<<'\n';
 
 }

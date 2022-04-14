@@ -10,20 +10,18 @@ in constructors to allocate memory space required. Implement C++ program for the
 
 #include "books.hpp"
 
+#define size_lib 50
+
 
 void meny_display();
 void search_book(unsigned int, Book*);
 
 int main(){
 
-    Book* library[50];
+    Book* library[size_lib];
     unsigned int bookmark =0;
 
-    /*for(int i=0;i<10;i++){
-        library[i]=NULL;
-    }*/
-
-    while(true){
+    while(bookmark!=size_lib){
 
         meny_display();
         unsigned int num;
@@ -86,7 +84,6 @@ int main(){
                 std::string author_fir_name;
                 std::string author_sec_name;
                 unsigned int purchurs_amount;
-                float customer_payment;
 
                 std::cout<<"Type the name of the book you are searching \n";
                 std:: cin >> book_name;
@@ -116,8 +113,49 @@ int main(){
                 break;
             }
             case 4:
+            {
+                std::string book_name;
+                std::string author_fir_name;
+                std::string author_sec_name;
+                unsigned int purchurs_amount;
 
+                std::cout<<"Type the name of the book you are searching \n";
+                std:: cin >> book_name;
+                std::cout<<"Enter author first name \n";
+                std:: cin >> author_fir_name;
+                std::cout<<"Enter author second name \n";
+                std:: cin >> author_sec_name;
 
+                if(bookmark==0){
+                    std::cout<<"Sorry, we dont have the book you want to buy now.\n";
+
+                }
+
+                for (int i=0; i< bookmark; i++){
+                    if((library[i]->tittle == book_name)&&(library[i]->authorfirst == author_fir_name)
+                    &&(library[i]->authorsecond == author_sec_name)){
+                        std::cout<< "We found the book you are searching\n";
+
+                        std::cout << "Enter Author First Name: ";
+                        std::cin >>book_name;
+                        // std::cout << "Enter Author Second Name: "<<library[i]->authorsecond << ' kr\n';
+                        // std::cout << "Enter Title Name: "<<library[i]->tittle << ' kr\n';
+                        // std::cout << "Enter Publisher Name: "<<library[i]->publish_name << ' kr\n';
+                        // std::cout << "Enter Price: "<<library[i]->price << ' kr\n';
+                        // std::cout << "Enter Number of Copies: "<<library[i]->copies << ' kr\n';
+                    }
+                    else
+                    {
+                        std::cout<<"Sorry, we dont have the book you want to buy now.\n";
+                    }
+
+                }
+                break;
+            }
+            case 5:
+            {
+                bookmark=size_lib;
+            }
         };
     };
 }
