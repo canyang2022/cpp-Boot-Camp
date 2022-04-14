@@ -1,2 +1,2 @@
 Here is the coded value of speed, front, rear, left, right: 
-0100100000001010
+0100010000010010

@@ -20,11 +20,10 @@ std::bitset<16> fill_size4_in_encoder(std::bitset<16> encode, std::bitset<4> inp
 
 int main(){
     unsigned int speed = 200;
-    unsigned int distance = 1500;
-    unsigned int fron=3000;
-    unsigned int rea=150;
+    unsigned int fron=300;
+    unsigned int rea=300;
     unsigned int lef=300;
-    unsigned int righ=150;
+    unsigned int righ=300;
 
     calculate_sped_dis(speed, fron, rea, lef, righ);
 
@@ -102,7 +101,7 @@ std::bitset<16> fill_size3_in_encoder(std::bitset<16> encode, std::bitset<3> inp
 std::bitset<16> fill_size4_in_encoder(std::bitset<16> encode, std::bitset<4> input_obj,int i){
 
         for(int j=0;j<4;j++){
-            encode[i*4+j]=input_obj[j];
+            encode[i*3+j]=input_obj[j];
         }
         return encode;
 
