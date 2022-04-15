@@ -82,7 +82,7 @@ int main(){
                 std::string book_name;
                 std::string author_fir_name;
                 std::string author_sec_name;
-                unsigned int purchurs_amount;
+
 
                 std::cout<<"Type the name of the book you are searching \n";
                 std:: cin >> book_name;
@@ -100,6 +100,9 @@ int main(){
                     if((library[i]->tittle == book_name)&&(library[i]->authorfirst == author_fir_name)
                     &&(library[i]->authorsecond == author_sec_name)){
                         std::cout<< "We found the book you are searching\n";
+                        std::cout << "The book name is: "<<library[i]->tittle << '\n';
+                        std::cout << "The author name is: "<<library[i]->authorfirst<<" "<< library[i]->authorsecond << '\n';
+                        std::cout << "The publisher is: "<<library[i]->publish_name << '\n';
                         std::cout << "The price is: "<<library[i]->price << " kr"<< '\n';
                         std::cout << "The copy is: "<< library[i]->copies<<'\n';
                     }
@@ -116,7 +119,11 @@ int main(){
                 std::string book_name;
                 std::string author_fir_name;
                 std::string author_sec_name;
+                std::string book_publisher;
+                float book_price ;
+                unsigned int book_copies;
                 unsigned int purchurs_amount;
+
                 unsigned int book_property;
                 bool is_editing;
 
@@ -169,6 +176,21 @@ int main(){
                                     std::cout << "Enter Title Name that you want to edit to: \n";
                                     std::cin>> book_name;
                                     library[i]->tittle = book_name;
+                                    break;
+                                case 4:
+                                    std::cout << "Enter book publisher that you want to edit to: \n";
+                                    std::cin>> book_publisher;
+                                    library[i]->publish_name = book_publisher;
+                                    break;
+                                case 5:
+                                    std::cout << "Enter book price that you want to edit to: \n";
+                                    std::cin>> book_price;
+                                    library[i]->price = book_price;
+                                    break;
+                                case 6:
+                                    std::cout << "Enter book copies that you want to edit to: \n";
+                                    std::cin>> book_copies;
+                                    library[i]->copies = book_copies;
                                     break;
                             }
                             std::cout << "Do you still want to edit something else? type y or n\n";

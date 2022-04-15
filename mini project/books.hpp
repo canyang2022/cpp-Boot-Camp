@@ -20,6 +20,7 @@ Book::Book()
 
     std::cout << "Enter Author First Name: ";
     std::cin >> authorfirst;
+
     std::cout << "Enter Author Second Name: ";
     std::cin >> authorsecond;
     std::cout << "Enter Tittle Name: ";
