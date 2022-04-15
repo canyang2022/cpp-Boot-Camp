@@ -65,7 +65,6 @@ int main(){
                             std::cout << "You have bought the book sucessfully!\n";
                         }else if(library[i]->price*purchurs_amount < customer_payment){
                             std::cout << "Thank you for the bonns. You have bought the book successfully!\n";
-
                         }
                         else{
                             std::cout << "Please pay the correct amount!\n";
@@ -101,7 +100,7 @@ int main(){
                     if((library[i]->tittle == book_name)&&(library[i]->authorfirst == author_fir_name)
                     &&(library[i]->authorsecond == author_sec_name)){
                         std::cout<< "We found the book you are searching\n";
-                        std::cout << "The price is: "<<library[i]->price << ' kr\n';
+                        std::cout << "The price is: "<<library[i]->price << " kr"<< '\n';
                         std::cout << "The copy is: "<< library[i]->copies<<'\n';
                     }
                     else
@@ -118,6 +117,8 @@ int main(){
                 std::string author_fir_name;
                 std::string author_sec_name;
                 unsigned int purchurs_amount;
+                unsigned int book_property;
+                bool is_editing;
 
                 std::cout<<"Type the name of the book you are searching \n";
                 std:: cin >> book_name;
@@ -136,11 +137,50 @@ int main(){
                     &&(library[i]->authorsecond == author_sec_name)){
                         std::cout<< "We found the book you are searching\n";
 
-                        std::cout << "Enter Author First Name: ";
-                        std::cin >>book_name;
-                        // std::cout << "Enter Author Second Name: "<<library[i]->authorsecond << ' kr\n';
-                        // std::cout << "Enter Title Name: "<<library[i]->tittle << ' kr\n';
-                        // std::cout << "Enter Publisher Name: "<<library[i]->publish_name << ' kr\n';
+                        char answer;
+                        is_editing = 1;
+
+                        while (is_editing)
+                        {
+                            std::cout<<" What do you want to edit\n";
+                            std::cout << "1. Author first name\n";
+                            std::cout << "2. Author seond name\n";
+                            std::cout << "3. Book name\n";
+                            std::cout << "4. Book publisher\n";
+                            std::cout << "5. Book price\n";
+                            std::cout << "6. Numbers of copies\n";
+                            std::cout <<"\n";
+                            std::cin >> book_property;
+                            switch (book_property)
+                            {
+                                case 1:
+                                    std::cout << "Enter Author First Name that you want to edit to: \n";
+                                    std::cin >>author_fir_name;
+                                    library[i]->authorfirst= author_fir_name;
+                                    break;
+
+                                case 2:
+                                    std::cout << "Enter Author Second Name that you want to edit to: \n";
+                                    std::cin >> author_sec_name;
+                                    library[i]->authorsecond = author_sec_name;
+                                    break;
+
+                                case 3:
+                                    std::cout << "Enter Title Name that you want to edit to: \n";
+                                    std::cin>> book_name;
+                                    library[i]->tittle = book_name;
+                                    break;
+                            }
+                            std::cout << "Do you still want to edit something else? type y or n\n";
+                            std::cin >> answer;
+                            if (answer == 'n'){
+                                is_editing=0;
+                            }
+
+                        }
+
+                        //std::cout << "Enter Publisher Name that you want to edit to: \n";
+                        //std::cin<< library[i]->publish_name << ' kr\n';
                         // std::cout << "Enter Price: "<<library[i]->price << ' kr\n';
                         // std::cout << "Enter Number of Copies: "<<library[i]->copies << ' kr\n';
                     }
@@ -148,7 +188,6 @@ int main(){
                     {
                         std::cout<<"Sorry, we dont have the book you want to buy now.\n";
                     }
-
                 }
                 break;
             }
