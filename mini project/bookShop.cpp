@@ -1,16 +1,16 @@
 //book shop
 /*A book shop maintains the inventory of books that are being sold at the shop. The list includes details such as
-author, title, price, publisher and number of copies. Whenever a customer wants a book, the sales person
+author, title, price, publisher and userChoiceber of copies. Whenever a customer wants a book, the sales person
 inputs the title and author and the system searches the list and displays whether it is available or not. If it is not,
 an appropriate message is displayed. During the buying process the system displays the book details and
-requests for the number of copies required. If the requested copies are available, the total cost of the requested
+requests for the userChoiceber of copies required. If the requested copies are available, the total cost of the requested
 copies is displayed; otherwise the message “Requiredcopies not in stock”is displayed.
 Design a system using a class called books with suitable member functions and Constructors. Use new operator
 in constructors to allocate memory space required. Implement C++ program for the system.*/
 
 #include "books.hpp"
 
-#define size_lib 50
+#define LIBRARY_SIZE 50
 
 
 void meny_display();
@@ -18,20 +18,18 @@ void search_book(unsigned int, Book*);
 
 int main(){
 
-    Book* library[size_lib];
-    unsigned int bookmark =0;
+    Book* library[LIBRARY_SIZE];
+    int bookmark =0;
 
-    while(bookmark!=size_lib){
+    while(bookmark!=LIBRARY_SIZE){
 
         meny_display();
-        unsigned int num;
-        unsigned int numbersOfBook;
-
+        unsigned int userChoice;
 
         std::cout << "Enter your choice: ";
-        std::cin>>num;
+        std::cin>>userChoice;
 
-        switch(num){
+        switch(userChoice){
             case 1:
             {
                 Book* bok= new Book();
@@ -44,7 +42,7 @@ int main(){
                 std::string book_name;
                 std::string author_fir_name;
                 std::string author_sec_name;
-                unsigned int purchurs_amount;
+                unsigned int purchase_amount;
                 float customer_payment;
 
                 std::cout<<"What is the name of the book you want to buy? \n";
@@ -54,16 +52,17 @@ int main(){
                 std::cout<<"Enter author second name \n";
                 std:: cin >> author_sec_name;
                 std::cout << "how many books do you want?\n";
-                std::cin>> purchurs_amount;
+                std::cin>> purchase_amount;
 
                 for (int i=0; i< bookmark; i++){
                     if((library[i]->tittle == book_name)&&(library[i]->authorfirst == author_fir_name)
-                    &&(library[i]->authorsecond == author_sec_name)&&((library[i]->copies)>= purchurs_amount)){
-                        std::cout<< "We have the book you want, your total price is "<<(library[i]->price)* (purchurs_amount)<< ". Please type the amount you are paying\n";
+                    &&(library[i]->authorsecond == author_sec_name)&&((library[i]->copies)>= purchase_amount)){
+                        int total_price=(library[i]->price)* (purchase_amount);
+                        std::cout<< "We have the book you want, your total price is "<<total_price<< ". Please type the amount you are paying\n";
                         std::cin>>customer_payment;
-                        if((library[i]->price*purchurs_amount) ==customer_payment){
+                        if(total_price ==customer_payment){
                             std::cout << "You have bought the book sucessfully!\n";
-                        }else if(library[i]->price*purchurs_amount < customer_payment){
+                        }else if(total_price < customer_payment){
                             std::cout << "Thank you for the bonns. You have bought the book successfully!\n";
                         }
                         else{
@@ -122,7 +121,6 @@ int main(){
                 std::string book_publisher;
                 float book_price ;
                 unsigned int book_copies;
-                unsigned int purchurs_amount;
 
                 unsigned int book_property;
                 bool is_editing;
@@ -145,7 +143,7 @@ int main(){
                         std::cout<< "We found the book you are searching\n";
 
                         char answer;
-                        is_editing = 1;
+                        is_editing = true;
 
                         while (is_editing)
                         {
@@ -155,7 +153,7 @@ int main(){
                             std::cout << "3. Book name\n";
                             std::cout << "4. Book publisher\n";
                             std::cout << "5. Book price\n";
-                            std::cout << "6. Numbers of copies\n";
+                            std::cout << "6. userChoicebers of copies\n";
                             std::cout <<"\n";
                             std::cin >> book_property;
                             switch (book_property)
@@ -196,7 +194,7 @@ int main(){
                             std::cout << "Do you still want to edit something else? type y or n\n";
                             std::cin >> answer;
                             if (answer == 'n'){
-                                is_editing=0;
+                                is_editing=false;
                             }
 
                         }
@@ -204,7 +202,7 @@ int main(){
                         //std::cout << "Enter Publisher Name that you want to edit to: \n";
                         //std::cin<< library[i]->publish_name << ' kr\n';
                         // std::cout << "Enter Price: "<<library[i]->price << ' kr\n';
-                        // std::cout << "Enter Number of Copies: "<<library[i]->copies << ' kr\n';
+                        // std::cout << "Enter userChoiceber of Copies: "<<library[i]->copies << ' kr\n';
                     }
                     else
                     {
@@ -215,10 +213,10 @@ int main(){
             }
             case 5:
             {
-                bookmark=size_lib;
+                bookmark=LIBRARY_SIZE;
             }
-        };
-    };
+        }
+    }
 }
 
 void meny_display(){
@@ -232,12 +230,10 @@ void meny_display(){
 
 }
 
-void search_book(unsigned int bookmark, Book* library[]){
+void search_book(unsigned int bookmark, Book** library){
     std::string book_name;
     std::string author_fir_name;
     std::string author_sec_name;
-    unsigned int purchurs_amount;
-    float customer_payment;
 
     std::cout<<"Type the name of the book you are searching \n";
     std:: cin >> book_name;

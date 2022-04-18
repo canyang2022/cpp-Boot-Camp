@@ -1,0 +1,1 @@
+/*Implement an object pool – let the user know if there is no empty slots available.*/
