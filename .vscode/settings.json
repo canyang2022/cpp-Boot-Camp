@@ -52,6 +52,12 @@
         "iomanip": "cpp",
         "thread": "cpp",
         "cfenv": "cpp",
-        "cinttypes": "cpp"
+        "cinttypes": "cpp",
+        "csignal": "cpp",
+        "list": "cpp",
+        "unordered_set": "cpp",
+        "numeric": "cpp",
+        "set": "cpp",
+        "typeindex": "cpp"
     }
 }

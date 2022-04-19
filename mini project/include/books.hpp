@@ -18,11 +18,7 @@ public:
 };
 
 
-/*Books::~Books()
-{
-    if (this->buffer != nullptr){
-        delete [] this->buffer;
-    }
-}*/
+
 void meny_display();
-void search_book(unsigned int, Book*);
+Book* search_books(int bookmark, Book** library, std::string tittle, std::string author_fir_name,std::string author_sec_name );
+void display_book(Book* book);

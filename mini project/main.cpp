@@ -46,8 +46,7 @@ int main(){
                 std::cout<<"Enter author first name \n";
                 std:: cin >> author_fir_name;
                 std::cout<<"Enter author second name \n";
-                std:: cin >> author_sec_name;
-                std::cout << "how many books do you want?\n";
+                std:: cin >> author_sec_name;                std::cout << "how many books do you want?\n";
                 std::cin>> purchase_amount;
 
                 for (int i=0; i< bookmark; i++){
@@ -78,35 +77,25 @@ int main(){
                 std::string author_fir_name;
                 std::string author_sec_name;
 
-
                 std::cout<<"Type the name of the book you are searching \n";
-                std:: cin >> book_name;
+                std::cin >> book_name;
                 std::cout<<"Enter author first name \n";
                 std:: cin >> author_fir_name;
                 std::cout<<"Enter author second name \n";
                 std:: cin >> author_sec_name;
 
                 if(bookmark==0){
-                    std::cout<<"Sorry, we dont have the book you want to buy now.\n";
+                    std::cout<<"Sorry, we dont have the book you want to search now.\n";
 
                 }
 
-                for (int i=0; i< bookmark; i++){
-                    if((library[i]->tittle == book_name)&&(library[i]->authorfirst == author_fir_name)
-                    &&(library[i]->authorsecond == author_sec_name)){
-                        std::cout<< "We found the book you are searching\n";
-                        std::cout << "The book name is: "<<library[i]->tittle << '\n';
-                        std::cout << "The author name is: "<<library[i]->authorfirst<<" "<< library[i]->authorsecond << '\n';
-                        std::cout << "The publisher is: "<<library[i]->publish_name << '\n';
-                        std::cout << "The price is: "<<library[i]->price << " kr"<< '\n';
-                        std::cout << "The copy is: "<< library[i]->copies<<'\n';
-                    }
-                    else
-                    {
-                        std::cout<<"Sorry, we dont have the book you want to buy now.\n";
-                    }
-
+                Book* book = search_books(bookmark, library, book_name, author_fir_name, author_sec_name);
+                if (book==nullptr){
+                    std::cout<<"Sorry, we dont have the book you want to search now.\n";
+                }else{
+                    display_book(book);
                 }
+
                 break;
             }
             case 4:
@@ -149,39 +138,48 @@ int main(){
                             std::cout << "3. Book name\n";
                             std::cout << "4. Book publisher\n";
                             std::cout << "5. Book price\n";
-                            std::cout << "6. userChoicebers of copies\n";
+                            std::cout << "6. numbers of copies\n";
                             std::cout <<"\n";
                             std::cin >> book_property;
+
+                            // switch cases
+                            const int auther_name_fi_id=1;
+                            const int auther_name_se_id=2;
+                            const int book_name_id =3;
+                            const int publisher_id =4;
+                            const int price_id=5;
+                            const int copies_id=6;
+
                             switch (book_property)
                             {
-                                case 1:
+                                case auther_name_fi_id:
                                     std::cout << "Enter Author First Name that you want to edit to: \n";
                                     std::cin >>author_fir_name;
                                     library[i]->authorfirst= author_fir_name;
                                     break;
 
-                                case 2:
+                                case auther_name_se_id:
                                     std::cout << "Enter Author Second Name that you want to edit to: \n";
                                     std::cin >> author_sec_name;
                                     library[i]->authorsecond = author_sec_name;
                                     break;
 
-                                case 3:
+                                case book_name_id:
                                     std::cout << "Enter Title Name that you want to edit to: \n";
                                     std::cin>> book_name;
                                     library[i]->tittle = book_name;
                                     break;
-                                case 4:
+                                case publisher_id:
                                     std::cout << "Enter book publisher that you want to edit to: \n";
                                     std::cin>> book_publisher;
                                     library[i]->publish_name = book_publisher;
                                     break;
-                                case 5:
+                                case price_id:
                                     std::cout << "Enter book price that you want to edit to: \n";
                                     std::cin>> book_price;
                                     library[i]->price = book_price;
                                     break;
-                                case 6:
+                                case copies_id:
                                     std::cout << "Enter book copies that you want to edit to: \n";
                                     std::cin>> book_copies;
                                     library[i]->copies = book_copies;
@@ -205,7 +203,12 @@ int main(){
             }
             case 5:
             {
+                // Release memory
+                for(int i=0; i<bookmark;i++){
+                    delete library[i];
+                }
                 bookmark=LIBRARY_SIZE;
+
             }
         }
     }
