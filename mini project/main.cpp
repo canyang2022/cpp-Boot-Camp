@@ -7,10 +7,9 @@ requests for the userChoiceber of copies required. If the requested copies are a
 copies is displayed; otherwise the message “Requiredcopies not in stock”is displayed.
 Design a system using a class called books with suitable member functions and Constructors. Use new operator
 in constructors to allocate memory space required. Implement C++ program for the system.*/
+//Author: Can Yang
 
 #include "books.hpp"
-
-
 
 
 int main(){
