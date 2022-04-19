@@ -10,11 +10,8 @@ in constructors to allocate memory space required. Implement C++ program for the
 
 #include "books.hpp"
 
-#define LIBRARY_SIZE 50
 
 
-void meny_display();
-void search_book(unsigned int, Book*);
 
 int main(){
 
@@ -199,10 +196,6 @@ int main(){
 
                         }
 
-                        //std::cout << "Enter Publisher Name that you want to edit to: \n";
-                        //std::cin<< library[i]->publish_name << ' kr\n';
-                        // std::cout << "Enter Price: "<<library[i]->price << ' kr\n';
-                        // std::cout << "Enter userChoiceber of Copies: "<<library[i]->copies << ' kr\n';
                     }
                     else
                     {
@@ -219,42 +212,3 @@ int main(){
     }
 }
 
-void meny_display(){
-    std::cout << "MENY\n";
-    std::cout << "1. Entry of New Book\n";
-    std::cout << "2. Buy Book\n";
-    std::cout << "3. Search For Book\n";
-    std::cout << "4. Edit Details of Book\n";
-    std::cout << "5. Exit\n";
-    std::cout <<"\n";
-
-}
-
-void search_book(unsigned int bookmark, Book** library){
-    std::string book_name;
-    std::string author_fir_name;
-    std::string author_sec_name;
-
-    std::cout<<"Type the name of the book you are searching \n";
-    std:: cin >> book_name;
-    std::cout<<"Enter author first name \n";
-    std:: cin >> author_fir_name;
-    std::cout<<"Enter author second name \n";
-    std:: cin >> author_sec_name;
-
-    for (int i=0; i< bookmark; i++){
-        if((library[i]->tittle == book_name)&&(library[i]->authorfirst == author_fir_name)
-        &&(library[i]->authorsecond == author_sec_name)){
-            std::cout<< "We found the book you are searching\n";
-            std::cout << "The price is: "<<library[i]->price << '\n';
-            std::cout << "The copy is: "<< library[i]->copies<<'\n';
-        }else
-        {
-        std::cout<<"Sorry, we dont have the book you want to buy now.\n";
-        }
-
-    }
-
-
-
-}
