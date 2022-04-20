@@ -58,6 +58,8 @@
         "unordered_set": "cpp",
         "numeric": "cpp",
         "set": "cpp",
-        "typeindex": "cpp"
+        "typeindex": "cpp",
+        "queue": "cpp",
+        "stack": "cpp"
     }
 }

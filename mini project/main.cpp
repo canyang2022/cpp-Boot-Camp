@@ -43,30 +43,37 @@ int main(){
 
                 std::cout<<"What is the name of the book you want to buy? \n";
                 std:: cin >> book_name;
-                std::cout<<"Enter author first name \n";
-                std:: cin >> author_fir_name;
-                std::cout<<"Enter author second name \n";
-                std:: cin >> author_sec_name;                std::cout << "how many books do you want?\n";
-                std::cin>> purchase_amount;
+                Book* IsBookFoundByTittle= search_books_with_tittle(bookmark,library,book_name);
+                if(IsBookFoundByTittle!=nullptr){
 
-                for (int i=0; i< bookmark; i++){
-                    if((library[i]->tittle == book_name)&&(library[i]->authorfirst == author_fir_name)
-                    &&(library[i]->authorsecond == author_sec_name)&&((library[i]->copies)>= purchase_amount)){
-                        int total_price=(library[i]->price)* (purchase_amount);
+                    std::cout<<"Enter author first name \n";
+                    std:: cin >> author_fir_name;
+                    std::cout<<"Enter author second name \n";
+                    std:: cin >> author_sec_name;
+                    std::cout << "how many books do you want?\n";
+                    std::cin>> purchase_amount;
+
+                    Book* book = search_books(bookmark, library, book_name, author_fir_name, author_sec_name);
+
+                    if((book!= nullptr)&&((book->copies)>= purchase_amount)){
+                        int total_price=book->price*purchase_amount;
                         std::cout<< "We have the book you want, your total price is "<<total_price<< ". Please type the amount you are paying\n";
                         std::cin>>customer_payment;
                         if(total_price ==customer_payment){
                             std::cout << "You have bought the book sucessfully!\n";
                         }else if(total_price < customer_payment){
-                            std::cout << "Thank you for the bonns. You have bought the book successfully!\n";
+                            std::cout << "Thank you for the bonus. You have bought the book successfully!\n";
                         }
                         else{
                             std::cout << "Please pay the correct amount!\n";
                         }
                     }else
-                    {
-                        std::cout<<"Sorry, Required copies are not in stock now.\n";
-                    }
+                        {
+                            std::cout<<"Sorry, Required copies are not in stock now.\n";
+                        }
+                }else{
+                    std::cout <<"Sorry, we cant find the book you are searching.\n";
+
                 }
                 break;
             }
