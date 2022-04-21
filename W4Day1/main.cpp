@@ -4,7 +4,7 @@ write another application which uses the share object and creates a comparison b
 printsouttheresult.*/
 /*Can Yang*/
 
-#include "shapeTemplate.hpp"
+#include "include/shapeTemplate.hpp"
 
 int main(){
     circle c1(2),c2(3);
@@ -13,7 +13,6 @@ int main(){
     shapeComparetion<circle, square>(c1, s1);
     shapeComparetion<rectangle, square>(r1, s1);
     shapeComparetion<circle, circle>(c2, c2);
-    std::cout<< "I dont like this solution but no more time for better one.";
 
 
 }
