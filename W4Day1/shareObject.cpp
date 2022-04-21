@@ -1,2 +1,0 @@
-/* Use this tutorial (use g++ instead of gcc) to generate a shared object from the template Shape Assignment. Then
-write another application which uses the share object and creates a comparison between shapes.*/
