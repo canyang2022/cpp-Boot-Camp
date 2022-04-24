@@ -1,4 +1,6 @@
-//books
+#ifndef BOOKS_HPP
+#define BOOKS_HPP
+
 #include<iostream>
 #define LIBRARY_SIZE 50
 
@@ -21,5 +23,6 @@ public:
 
 void meny_display();
 Book* search_books(int bookmark, Book** library, std::string tittle, std::string author_fir_name,std::string author_sec_name );
-void display_book(Book* book);
+void book_display(Book* book);
 Book* search_books_with_tittle(int bookmark, Book** library, std::string tittle);
+#endif

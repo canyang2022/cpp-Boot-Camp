@@ -9,7 +9,8 @@ Design a system using a class called books with suitable member functions and Co
 in constructors to allocate memory space required. Implement C++ program for the system.*/
 //Author: Can Yang
 
-#include "include/books.hpp"
+#include "books.hpp"
+
 
 
 int main(){
@@ -100,7 +101,7 @@ int main(){
                 if (book==nullptr){
                     std::cout<<"Sorry, we dont have the book you want to search now.\n";
                 }else{
-                    display_book(book);
+                    book_display(book);
                 }
 
                 break;
