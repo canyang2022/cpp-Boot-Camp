@@ -10,6 +10,10 @@ in constructors to allocate memory space required. Implement C++ program for the
 //Author: Can Yang
 
 #include "books.hpp"
+#include "bookDisplay.hpp"
+#include "menyDisplay.hpp"
+#include "searchBooks.hpp"
+#include "searchBooksWithTittle.hpp"
 
 
 

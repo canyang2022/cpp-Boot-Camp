@@ -20,9 +20,5 @@ public:
 };
 
 
-
-void meny_display();
-Book* search_books(int bookmark, Book** library, std::string tittle, std::string author_fir_name,std::string author_sec_name );
-void book_display(Book* book);
 Book* search_books_with_tittle(int bookmark, Book** library, std::string tittle);
 #endif
