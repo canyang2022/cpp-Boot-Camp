@@ -17,8 +17,11 @@ target_include_directories(menyDisplaylib PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/inc
 add_library(searchBookslib STATIC src/searchBooks.cpp)
 target_include_directories(searchBookslib PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/include)
 
-add_library(searchBooksWithTittle STATIC src/searchBooksWithTittle.cpp)
-target_include_directories(searchBooksWithTittle PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/include)
+add_library(searchBooksWithTittlelib STATIC src/searchBooksWithTittle.cpp)
+target_include_directories(searchBooksWithTittlelib PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/include)
+
+add_library(inputErrorHandlinglib STATIC src/inputErrorHandling.cpp)
+target_include_directories(inputErrorHandlinglib PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/include)
 
 
 add_executable(bookShop main.cpp)
@@ -26,6 +29,8 @@ target_link_libraries(bookShop PUBLIC bookShoplib)
 target_link_libraries(bookShop PUBLIC bookDisplaylib)
 target_link_libraries(bookShop PUBLIC menyDisplaylib)
 target_link_libraries(bookShop PUBLIC searchBookslib)
-target_link_libraries(bookShop PUBLIC searchBooksWithTittle)
+target_link_libraries(bookShop PUBLIC searchBooksWithTittlelib)
+target_link_libraries(bookShop PUBLIC inputErrorHandlinglib)
+
 
 

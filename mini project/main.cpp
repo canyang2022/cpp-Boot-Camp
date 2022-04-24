@@ -14,13 +14,22 @@ in constructors to allocate memory space required. Implement C++ program for the
 #include "menyDisplay.hpp"
 #include "searchBooks.hpp"
 #include "searchBooksWithTittle.hpp"
-
+#include "inputErrorHandling.hpp"
 
 
 int main(){
 
     Book* library[LIBRARY_SIZE];
     int bookmark =0;
+
+    // For switch cases.
+    const int add_book =1;
+    const int buy_book =2;
+    const int search_book =3;
+    const int edit_book =4;
+    const int exit =5;
+
+
 
     while(bookmark!=LIBRARY_SIZE){
 
@@ -30,15 +39,19 @@ int main(){
         std::cout << "Enter your choice: ";
         std::cin>>userChoice;
 
+        while(!((userChoice>0)&&(userChoice<6))){
+            inputErrorHandling(&userChoice);
+        }
+
         switch(userChoice){
-            case 1:
+            case add_book:
             {
                 Book* bok= new Book();
                 library[bookmark]= bok;
                 bookmark++;
                 break;
             }
-            case 2:
+            case buy_book:
             {
                 std::string book_name;
                 std::string author_fir_name;
@@ -77,13 +90,13 @@ int main(){
                             std::cout<<"Sorry, Required copies are not in stock now.\n";
                         }
                 }else{
-                    std::cout <<"Sorry, we cant find the book you are searching.\n";
+                    std::cout <<"Sorry, we cant find the book you are buying.\n";
 
                 }
                 break;
             }
 
-            case 3:
+            case search_book:
             {
                 std::string book_name;
                 std::string author_fir_name;
@@ -91,26 +104,33 @@ int main(){
 
                 std::cout<<"Type the name of the book you are searching \n";
                 std::cin >> book_name;
-                std::cout<<"Enter author first name \n";
-                std:: cin >> author_fir_name;
-                std::cout<<"Enter author second name \n";
-                std:: cin >> author_sec_name;
+                Book* IsBookFoundByTittle= search_books_with_tittle(bookmark,library,book_name);
+                if(IsBookFoundByTittle!=nullptr){
+                    std::cout<<"Enter author first name \n";
+                    std:: cin >> author_fir_name;
+                    std::cout<<"Enter author second name \n";
+                    std:: cin >> author_sec_name;
 
-                if(bookmark==0){
-                    std::cout<<"Sorry, we dont have the book you want to search now.\n";
+                    // WHEN THE USER HASNT ADDED NEW BOOK
+                    if(bookmark==0){
+                        std::cout<<"Sorry, we dont have the book you want to search now.\n";
 
-                }
+                    }
 
-                Book* book = search_books(bookmark, library, book_name, author_fir_name, author_sec_name);
-                if (book==nullptr){
-                    std::cout<<"Sorry, we dont have the book you want to search now.\n";
+                    Book* book = search_books(bookmark, library, book_name, author_fir_name, author_sec_name);
+                    if (book==nullptr){
+                        std::cout<<"Sorry, we dont have the book you want to search now.\n";
+                    }else{
+                        book_display(book);
+                    }
                 }else{
-                    book_display(book);
+                    std::cout <<"Sorry, we cant find the book you are searching.\n";
+
                 }
 
                 break;
             }
-            case 4:
+            case edit_book:
             {
                 std::string book_name;
                 std::string author_fir_name;
@@ -213,7 +233,7 @@ int main(){
                 }
                 break;
             }
-            case 5:
+            case exit:
             {
                 // Release memory
                 for(int i=0; i<bookmark;i++){
