@@ -31,7 +31,7 @@ int main(){
 
 void calculate_sped_dis(unsigned int speed, unsigned int fron, unsigned int rea,unsigned int lef, unsigned int righ){
 
-    unsigned int str_sp=speed/2;
+    unsigned int str_sp=speed/20;
     unsigned int front = cal_dis(fron);
     unsigned int rear = cal_dis(rear);
     unsigned int left = cal_dis(lef);
