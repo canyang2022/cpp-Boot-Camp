@@ -7,16 +7,16 @@ project(inputHandler VERSION 1.0)
 add_library(socketCanlib STATIC include/socketcan_cpp.cpp)
 target_include_directories(socketCanlib PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/include)
 
-add_executable(vcanWriter vcanWriter.cpp)
-target_link_libraries(vcanWriter PUBLIC socketCanlib)
+add_executable(main main.cpp)
+target_link_libraries(main PUBLIC socketCanlib)
 
 
 add_library(ncurseInputlib STATIC ncurse_input.cpp)
 target_include_directories(ncurseInputlib PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/include)
 
-target_link_libraries(vcanWriter PUBLIC ncurseInputlib)
+target_link_libraries(main PUBLIC ncurseInputlib)
 
 find_package(Curses REQUIRED )
 include_directories( ${CURSES_INCLUDE_DIRS})
 
-target_link_libraries(vcanWriter PUBLIC ${CURSES_LIBRARIES})
+target_link_libraries(main PUBLIC ${CURSES_LIBRARIES})
