@@ -1,0 +1,34 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../include/ncurseInput.hpp
+curses.h
+-
+iostream
+-
+
+../include/socketcan_cpp.h
+string
+-
+linux/can.h
+-
+
+../include/vcanwriter.hpp
+iostream
+-
+socketcan_cpp.h
+../include/socketcan_cpp.h
+ncurseInput.hpp
+../include/ncurseInput.hpp
+
+/home/cyang46/repo/cpp-Boot-Camp/group-Project/main.cpp
+vcanwriter.hpp
+/home/cyang46/repo/cpp-Boot-Camp/group-Project/vcanwriter.hpp
+conio.h
+/home/cyang46/repo/cpp-Boot-Camp/group-Project/conio.h
+

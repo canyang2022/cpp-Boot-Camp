@@ -1,6 +1,6 @@
 #include <curses.h>
 #include <iostream>
-#define lenOfFrame 8
+#define lenOfFrame 2
 
 using namespace std;
 

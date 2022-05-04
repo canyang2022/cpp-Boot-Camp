@@ -1,0 +1,2 @@
+/usr/bin/ar qc libsocketCanlib.a  CMakeFiles/socketCanlib.dir/include/socketcan_cpp.cpp.o
+/usr/bin/ranlib libsocketCanlib.a

@@ -10,7 +10,7 @@ unit16_t 1 0 1 1 1 0 1 0 0 1 0 1 1 0 1 1*/
 #include<string>
 #include <fstream>
 
-#define size 8
+#define size cf_to_write.len
 
 unsigned int cal_dis(unsigned int);
 void calculate_sped_dis(unsigned int, unsigned int, unsigned int,unsigned int, unsigned int);

@@ -1,0 +1,20 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../include/socketcan_cpp.h
+string
+-
+linux/can.h
+-
+
+/home/cyang46/repo/cpp-Boot-Camp/group-Project/vcanReader.cpp
+iostream
+-
+socketcan_cpp.h
+/home/cyang46/repo/cpp-Boot-Camp/group-Project/socketcan_cpp.h
+

@@ -20,3 +20,6 @@ find_package(Curses REQUIRED )
 include_directories( ${CURSES_INCLUDE_DIRS})
 
 target_link_libraries(main PUBLIC ${CURSES_LIBRARIES})
+
+add_executable(vcanReader vcanReader.cpp)
+target_link_libraries(vcanReader PUBLIC socketCanlib)

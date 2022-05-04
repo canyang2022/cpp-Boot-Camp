@@ -14,11 +14,13 @@ int main() {
         scpp::CanFrame cf_to_write;
 
         cf_to_write.id = 1;
-        cf_to_write.len = 8;
-        int input_array[8];
+        cf_to_write.len = 2;
+
+
+        int input_array[cf_to_write.len];
         ncurseInput(input_array);
 
-        for (int i = 0; i < 8; ++i)
+        for (int i = 0; i < (cf_to_write.len); i++)
             //cf_to_write.data[i] = std::rand() % 256;
             cf_to_write.data[i] =input_array[i];
 
