@@ -1,1 +1,0 @@
-/usr/bin/c++     CMakeFiles/emulator.dir/main.cpp.o CMakeFiles/emulator.dir/src/emulator.cpp.o CMakeFiles/emulator.dir/src/CAN_reader.cpp.o CMakeFiles/emulator.dir/src/decoding.cpp.o  -o emulator ../../lib/socketCAN/libsocketCanlib.a -lpthread 
