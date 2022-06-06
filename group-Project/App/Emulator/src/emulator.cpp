@@ -142,29 +142,6 @@ void Emulator::CalculateGearNum(Decoded_data *_data)
 
 void Emulator::CalculateRPM(Decoded_data *_data)
 {
-    /*int rpm; = 0 + idle;
-
-    if(_data->speed >= 0 && _data->speed <= 60){
-        _data->speed -
-    }
-    else if(_data->speed > 60 && _data->speed <= 80){
-        _data->gear_num = 2;
-    }
-    else if(_data->speed > 80 && _data->speed <= 118){
-        _data->gear_num = 3;
-    }
-    else if(_data->speed > 118 && _data->speed <= 170){
-        _data->gear_num = 4;
-    }
-    else if(_data->speed > 170 && _data->speed <= 200){
-        _data->gear_num = 5;
-    }
-    else if(200 < _data->speed){
-        _data->gear_num = 6;
-    }
-    else{
-        std::cout << "Transmission failure";
-    }*/
 
     int gear_num_ratio;
     if (_data->gear_num == 1 && _data->speed <= 40)
