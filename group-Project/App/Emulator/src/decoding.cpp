@@ -29,7 +29,6 @@ int Decoding::DecodeGearStick(const uint8_t &gear_stick_request)
 {
     switch (gear_stick_request)
     {
-        //here could initilize
     case park: //user press 'p' for park
         gear_stick = 0;
 

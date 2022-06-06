@@ -17,9 +17,6 @@ void Reader(Decoded_data *_decoded, std::atomic<bool> *_exit_flag, scpp::SocketC
                    fr.data[0], fr.data[1], fr.data[2], fr.data[3],
                    fr.data[4], fr.data[5], fr.data[6], fr.data[7]);
 
-        //SharedBuffer THIS_IS_SHARED_AMONGST_BOTH_THREADS;
-
-        //Decoded_data decoded;
 
         { //open lock scope
            std::lock_guard<std::mutex> lock(_decoded->m);
@@ -47,11 +44,8 @@ void Reader(Decoded_data *_decoded, std::atomic<bool> *_exit_flag, scpp::SocketC
         } //close lock scope
 
 
-       //THIS_IS_SHARED_AMONGST_BOTH_THREADS.write(decoded);
-
-
             std::cout << "Ignition: " << _decoded->decoded_start << std::endl;
-            std::cout << "Gear Stick: " << /* (char) */_decoded->decoded_gear_stick << std::endl;
+            std::cout << "Gear Stick: " << _decoded->decoded_gear_stick << std::endl;
             std::cout << "Throttle: " << _decoded->decoded_throttle << std::endl;
         }
 
@@ -73,9 +67,7 @@ void SendToDashboard(Decoded_data *_decoded, scpp::SocketCan &socket_dash)
     Packing_RPM packed_rpm;
 
     cf_to_dashboard.id = 0x123;
-
     cf_to_dashboard.len = 8;
-
 
     cf_to_dashboard.data[0] = _decoded->decoded_start;
     cf_to_dashboard.data[1] = _decoded->decoded_gear_stick;
@@ -93,10 +85,9 @@ void SendToDashboard(Decoded_data *_decoded, scpp::SocketCan &socket_dash)
 
     socket_dash.write(cf_to_dashboard);
 
-     scpp::CanFrame cf_to_dashboard_shutdown;
+    scpp::CanFrame cf_to_dashboard_shutdown;
 
     cf_to_dashboard_shutdown.id = 0x124;
-
     cf_to_dashboard_shutdown.len = 2;
 
     cf_to_dashboard_shutdown.data[0] = _decoded->shutdown;
