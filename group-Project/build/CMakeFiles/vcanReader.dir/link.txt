@@ -1,1 +1,0 @@
-/usr/bin/c++     CMakeFiles/vcanReader.dir/vcanReader.cpp.o  -o vcanReader libsocketCanlib.a 

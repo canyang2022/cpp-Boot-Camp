@@ -48,10 +48,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/cyang46/repo/cpp-Boot-Camp/group-Project
+CMAKE_SOURCE_DIR = "/home/cyang46/Documents/CPP BootCamp/Group Project/Team-Treadless_fi"
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/cyang46/repo/cpp-Boot-Camp/group-Project/build
+CMAKE_BINARY_DIR = "/home/cyang46/Documents/CPP BootCamp/Group Project/Team-Treadless_fi/build"
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -80,9 +80,9 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/cyang46/repo/cpp-Boot-Camp/group-Project/build/CMakeFiles /home/cyang46/repo/cpp-Boot-Camp/group-Project/build/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start "/home/cyang46/Documents/CPP BootCamp/Group Project/Team-Treadless_fi/build/CMakeFiles" "/home/cyang46/Documents/CPP BootCamp/Group Project/Team-Treadless_fi/build/CMakeFiles/progress.marks"
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/cyang46/repo/cpp-Boot-Camp/group-Project/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start "/home/cyang46/Documents/CPP BootCamp/Group Project/Team-Treadless_fi/build/CMakeFiles" 0
 .PHONY : all
 
 # The main clean target
@@ -111,32 +111,6 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named vcanReader
-
-# Build rule for target.
-vcanReader: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 vcanReader
-.PHONY : vcanReader
-
-# fast build rule for target.
-vcanReader/fast:
-	$(MAKE) -f CMakeFiles/vcanReader.dir/build.make CMakeFiles/vcanReader.dir/build
-.PHONY : vcanReader/fast
-
-#=============================================================================
-# Target rules for targets named ncurseInputlib
-
-# Build rule for target.
-ncurseInputlib: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 ncurseInputlib
-.PHONY : ncurseInputlib
-
-# fast build rule for target.
-ncurseInputlib/fast:
-	$(MAKE) -f CMakeFiles/ncurseInputlib.dir/build.make CMakeFiles/ncurseInputlib.dir/build
-.PHONY : ncurseInputlib/fast
-
-#=============================================================================
 # Target rules for targets named socketCanlib
 
 # Build rule for target.
@@ -146,129 +120,60 @@ socketCanlib: cmake_check_build_system
 
 # fast build rule for target.
 socketCanlib/fast:
-	$(MAKE) -f CMakeFiles/socketCanlib.dir/build.make CMakeFiles/socketCanlib.dir/build
+	$(MAKE) -f lib/socketCAN/CMakeFiles/socketCanlib.dir/build.make lib/socketCAN/CMakeFiles/socketCanlib.dir/build
 .PHONY : socketCanlib/fast
 
 #=============================================================================
-# Target rules for targets named main
+# Target rules for targets named inputHandler
 
 # Build rule for target.
-main: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 main
-.PHONY : main
+inputHandler: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 inputHandler
+.PHONY : inputHandler
 
 # fast build rule for target.
-main/fast:
-	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/build
-.PHONY : main/fast
+inputHandler/fast:
+	$(MAKE) -f App/InputHandler/CMakeFiles/inputHandler.dir/build.make App/InputHandler/CMakeFiles/inputHandler.dir/build
+.PHONY : inputHandler/fast
 
-include/socketcan_cpp.o: include/socketcan_cpp.cpp.o
+#=============================================================================
+# Target rules for targets named emulator
 
-.PHONY : include/socketcan_cpp.o
+# Build rule for target.
+emulator: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 emulator
+.PHONY : emulator
 
-# target to build an object file
-include/socketcan_cpp.cpp.o:
-	$(MAKE) -f CMakeFiles/socketCanlib.dir/build.make CMakeFiles/socketCanlib.dir/include/socketcan_cpp.cpp.o
-.PHONY : include/socketcan_cpp.cpp.o
+# fast build rule for target.
+emulator/fast:
+	$(MAKE) -f App/Emulator/CMakeFiles/emulator.dir/build.make App/Emulator/CMakeFiles/emulator.dir/build
+.PHONY : emulator/fast
 
-include/socketcan_cpp.i: include/socketcan_cpp.cpp.i
+#=============================================================================
+# Target rules for targets named avic
 
-.PHONY : include/socketcan_cpp.i
+# Build rule for target.
+avic: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 avic
+.PHONY : avic
 
-# target to preprocess a source file
-include/socketcan_cpp.cpp.i:
-	$(MAKE) -f CMakeFiles/socketCanlib.dir/build.make CMakeFiles/socketCanlib.dir/include/socketcan_cpp.cpp.i
-.PHONY : include/socketcan_cpp.cpp.i
+# fast build rule for target.
+avic/fast:
+	$(MAKE) -f App/Avic/CMakeFiles/avic.dir/build.make App/Avic/CMakeFiles/avic.dir/build
+.PHONY : avic/fast
 
-include/socketcan_cpp.s: include/socketcan_cpp.cpp.s
+#=============================================================================
+# Target rules for targets named avic_autogen
 
-.PHONY : include/socketcan_cpp.s
+# Build rule for target.
+avic_autogen: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 avic_autogen
+.PHONY : avic_autogen
 
-# target to generate assembly for a file
-include/socketcan_cpp.cpp.s:
-	$(MAKE) -f CMakeFiles/socketCanlib.dir/build.make CMakeFiles/socketCanlib.dir/include/socketcan_cpp.cpp.s
-.PHONY : include/socketcan_cpp.cpp.s
-
-main.o: main.cpp.o
-
-.PHONY : main.o
-
-# target to build an object file
-main.cpp.o:
-	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main.cpp.o
-.PHONY : main.cpp.o
-
-main.i: main.cpp.i
-
-.PHONY : main.i
-
-# target to preprocess a source file
-main.cpp.i:
-	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main.cpp.i
-.PHONY : main.cpp.i
-
-main.s: main.cpp.s
-
-.PHONY : main.s
-
-# target to generate assembly for a file
-main.cpp.s:
-	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main.cpp.s
-.PHONY : main.cpp.s
-
-ncurse_input.o: ncurse_input.cpp.o
-
-.PHONY : ncurse_input.o
-
-# target to build an object file
-ncurse_input.cpp.o:
-	$(MAKE) -f CMakeFiles/ncurseInputlib.dir/build.make CMakeFiles/ncurseInputlib.dir/ncurse_input.cpp.o
-.PHONY : ncurse_input.cpp.o
-
-ncurse_input.i: ncurse_input.cpp.i
-
-.PHONY : ncurse_input.i
-
-# target to preprocess a source file
-ncurse_input.cpp.i:
-	$(MAKE) -f CMakeFiles/ncurseInputlib.dir/build.make CMakeFiles/ncurseInputlib.dir/ncurse_input.cpp.i
-.PHONY : ncurse_input.cpp.i
-
-ncurse_input.s: ncurse_input.cpp.s
-
-.PHONY : ncurse_input.s
-
-# target to generate assembly for a file
-ncurse_input.cpp.s:
-	$(MAKE) -f CMakeFiles/ncurseInputlib.dir/build.make CMakeFiles/ncurseInputlib.dir/ncurse_input.cpp.s
-.PHONY : ncurse_input.cpp.s
-
-vcanReader.o: vcanReader.cpp.o
-
-.PHONY : vcanReader.o
-
-# target to build an object file
-vcanReader.cpp.o:
-	$(MAKE) -f CMakeFiles/vcanReader.dir/build.make CMakeFiles/vcanReader.dir/vcanReader.cpp.o
-.PHONY : vcanReader.cpp.o
-
-vcanReader.i: vcanReader.cpp.i
-
-.PHONY : vcanReader.i
-
-# target to preprocess a source file
-vcanReader.cpp.i:
-	$(MAKE) -f CMakeFiles/vcanReader.dir/build.make CMakeFiles/vcanReader.dir/vcanReader.cpp.i
-.PHONY : vcanReader.cpp.i
-
-vcanReader.s: vcanReader.cpp.s
-
-.PHONY : vcanReader.s
-
-# target to generate assembly for a file
-vcanReader.cpp.s:
-	$(MAKE) -f CMakeFiles/vcanReader.dir/build.make CMakeFiles/vcanReader.dir/vcanReader.cpp.s
-.PHONY : vcanReader.cpp.s
+# fast build rule for target.
+avic_autogen/fast:
+	$(MAKE) -f App/Avic/CMakeFiles/avic_autogen.dir/build.make App/Avic/CMakeFiles/avic_autogen.dir/build
+.PHONY : avic_autogen/fast
 
 # Help Target
 help:
@@ -277,23 +182,12 @@ help:
 	@echo "... clean"
 	@echo "... depend"
 	@echo "... rebuild_cache"
-	@echo "... vcanReader"
-	@echo "... ncurseInputlib"
-	@echo "... socketCanlib"
 	@echo "... edit_cache"
-	@echo "... main"
-	@echo "... include/socketcan_cpp.o"
-	@echo "... include/socketcan_cpp.i"
-	@echo "... include/socketcan_cpp.s"
-	@echo "... main.o"
-	@echo "... main.i"
-	@echo "... main.s"
-	@echo "... ncurse_input.o"
-	@echo "... ncurse_input.i"
-	@echo "... ncurse_input.s"
-	@echo "... vcanReader.o"
-	@echo "... vcanReader.i"
-	@echo "... vcanReader.s"
+	@echo "... socketCanlib"
+	@echo "... inputHandler"
+	@echo "... emulator"
+	@echo "... avic"
+	@echo "... avic_autogen"
 .PHONY : help
 
 

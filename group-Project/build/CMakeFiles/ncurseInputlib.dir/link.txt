@@ -1,2 +1,0 @@
-/usr/bin/ar qc libncurseInputlib.a  CMakeFiles/ncurseInputlib.dir/ncurse_input.cpp.o
-/usr/bin/ranlib libncurseInputlib.a

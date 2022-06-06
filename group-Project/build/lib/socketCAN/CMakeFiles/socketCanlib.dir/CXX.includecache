@@ -1,0 +1,40 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../lib/socketCAN/include/socketcan_cpp.h
+string
+-
+linux/can.h
+-
+
+/home/cyang46/Documents/CPP BootCamp/Group Project/Team-Treadless_fi/lib/socketCAN/src/socketcan_cpp.cpp
+socketcan_cpp.h
+/home/cyang46/Documents/CPP BootCamp/Group Project/Team-Treadless_fi/lib/socketCAN/src/socketcan_cpp.h
+stdio.h
+-
+stdlib.h
+-
+string.h
+-
+stdio.h
+-
+stdlib.h
+-
+string.h
+-
+unistd.h
+-
+net/if.h
+-
+sys/ioctl.h
+-
+sys/socket.h
+-
+linux/can/raw.h
+-
+

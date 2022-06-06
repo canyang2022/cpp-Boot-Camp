@@ -1,4 +1,4 @@
-# Install script for directory: /home/cyang46/repo/cpp-Boot-Camp/group-Project
+# Install script for directory: /home/cyang46/Documents/CPP BootCamp/Group Project/Team-Treadless_fi
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -37,6 +37,13 @@ if(NOT DEFINED CMAKE_CROSSCOMPILING)
   set(CMAKE_CROSSCOMPILING "FALSE")
 endif()
 
+if(NOT CMAKE_INSTALL_LOCAL_ONLY)
+  # Include the install script for each subdirectory.
+  include("/home/cyang46/Documents/CPP BootCamp/Group Project/Team-Treadless_fi/build/lib/socketCAN/cmake_install.cmake")
+  include("/home/cyang46/Documents/CPP BootCamp/Group Project/Team-Treadless_fi/build/App/cmake_install.cmake")
+
+endif()
+
 if(CMAKE_INSTALL_COMPONENT)
   set(CMAKE_INSTALL_MANIFEST "install_manifest_${CMAKE_INSTALL_COMPONENT}.txt")
 else()
@@ -45,5 +52,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/cyang46/repo/cpp-Boot-Camp/group-Project/build/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/home/cyang46/Documents/CPP BootCamp/Group Project/Team-Treadless_fi/build/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

@@ -2,24 +2,17 @@ cmake_minimum_required(VERSION 3.10)
 set(CMAKE_CXX_STANDARD 14)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-project(inputHandler VERSION 1.0)
+project(main VERSION 1.0)
 
-add_library(socketCanlib STATIC include/socketcan_cpp.cpp)
-target_include_directories(socketCanlib PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/include)
+add_subdirectory(lib/socketCAN)
+add_subdirectory(App)
 
-add_executable(main main.cpp)
-target_link_libraries(main PUBLIC socketCanlib)
+file(TO_CMAKE_PATH "${PROJECT_BINARY_DIR}/App/InputHandler/CMakeLists.txt" LOC_PATH)
+file(TO_CMAKE_PATH "${PROJECT_BINARY_DIR}/lib/socketCAN/CMakeLists.txt" LOC_PATH)
+file(TO_CMAKE_PATH "${PROJECT_BINARY_DIR}/App/Emulator/CMakeLists.txt" LOC_PATH)
+file(TO_CMAKE_PATH "${PROJECT_BINARY_DIR}/App/Avic/CMakeLists.txt" LOC_PATH)
 
 
-add_library(ncurseInputlib STATIC ncurse_input.cpp)
-target_include_directories(ncurseInputlib PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/include)
+add_compile_options(-Wall -Wextra -Wpedantic)
 
-target_link_libraries(main PUBLIC ncurseInputlib)
 
-find_package(Curses REQUIRED )
-include_directories( ${CURSES_INCLUDE_DIRS})
-
-target_link_libraries(main PUBLIC ${CURSES_LIBRARIES})
-
-add_executable(vcanReader vcanReader.cpp)
-target_link_libraries(vcanReader PUBLIC socketCanlib)

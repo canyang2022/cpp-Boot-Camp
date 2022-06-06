@@ -54,157 +54,285 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/cyang46/repo/cpp-Boot-Camp/group-Project
+CMAKE_SOURCE_DIR = "/home/cyang46/Documents/CPP BootCamp/Group Project/Team-Treadless_fi"
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/cyang46/repo/cpp-Boot-Camp/group-Project/build
+CMAKE_BINARY_DIR = "/home/cyang46/Documents/CPP BootCamp/Group Project/Team-Treadless_fi/build"
 
 #=============================================================================
-# Target rules for target CMakeFiles/vcanReader.dir
+# Directory level rules for directory lib/socketCAN
+
+# Convenience name for "all" pass in the directory.
+lib/socketCAN/all: lib/socketCAN/CMakeFiles/socketCanlib.dir/all
+
+.PHONY : lib/socketCAN/all
+
+# Convenience name for "clean" pass in the directory.
+lib/socketCAN/clean: lib/socketCAN/CMakeFiles/socketCanlib.dir/clean
+
+.PHONY : lib/socketCAN/clean
+
+# Convenience name for "preinstall" pass in the directory.
+lib/socketCAN/preinstall:
+
+.PHONY : lib/socketCAN/preinstall
+
+#=============================================================================
+# Target rules for target lib/socketCAN/CMakeFiles/socketCanlib.dir
 
 # All Build rule for target.
-CMakeFiles/vcanReader.dir/all: CMakeFiles/socketCanlib.dir/all
-	$(MAKE) -f CMakeFiles/vcanReader.dir/build.make CMakeFiles/vcanReader.dir/depend
-	$(MAKE) -f CMakeFiles/vcanReader.dir/build.make CMakeFiles/vcanReader.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/cyang46/repo/cpp-Boot-Camp/group-Project/build/CMakeFiles --progress-num=7,8 "Built target vcanReader"
-.PHONY : CMakeFiles/vcanReader.dir/all
+lib/socketCAN/CMakeFiles/socketCanlib.dir/all:
+	$(MAKE) -f lib/socketCAN/CMakeFiles/socketCanlib.dir/build.make lib/socketCAN/CMakeFiles/socketCanlib.dir/depend
+	$(MAKE) -f lib/socketCAN/CMakeFiles/socketCanlib.dir/build.make lib/socketCAN/CMakeFiles/socketCanlib.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="/home/cyang46/Documents/CPP BootCamp/Group Project/Team-Treadless_fi/build/CMakeFiles" --progress-num=22,23 "Built target socketCanlib"
+.PHONY : lib/socketCAN/CMakeFiles/socketCanlib.dir/all
 
 # Include target in all.
-all: CMakeFiles/vcanReader.dir/all
+all: lib/socketCAN/CMakeFiles/socketCanlib.dir/all
 
 .PHONY : all
 
 # Build rule for subdir invocation for target.
-CMakeFiles/vcanReader.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/cyang46/repo/cpp-Boot-Camp/group-Project/build/CMakeFiles 4
-	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/vcanReader.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/cyang46/repo/cpp-Boot-Camp/group-Project/build/CMakeFiles 0
-.PHONY : CMakeFiles/vcanReader.dir/rule
+lib/socketCAN/CMakeFiles/socketCanlib.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start "/home/cyang46/Documents/CPP BootCamp/Group Project/Team-Treadless_fi/build/CMakeFiles" 2
+	$(MAKE) -f CMakeFiles/Makefile2 lib/socketCAN/CMakeFiles/socketCanlib.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start "/home/cyang46/Documents/CPP BootCamp/Group Project/Team-Treadless_fi/build/CMakeFiles" 0
+.PHONY : lib/socketCAN/CMakeFiles/socketCanlib.dir/rule
 
 # Convenience name for target.
-vcanReader: CMakeFiles/vcanReader.dir/rule
-
-.PHONY : vcanReader
-
-# clean rule for target.
-CMakeFiles/vcanReader.dir/clean:
-	$(MAKE) -f CMakeFiles/vcanReader.dir/build.make CMakeFiles/vcanReader.dir/clean
-.PHONY : CMakeFiles/vcanReader.dir/clean
-
-# clean rule for target.
-clean: CMakeFiles/vcanReader.dir/clean
-
-.PHONY : clean
-
-#=============================================================================
-# Target rules for target CMakeFiles/ncurseInputlib.dir
-
-# All Build rule for target.
-CMakeFiles/ncurseInputlib.dir/all:
-	$(MAKE) -f CMakeFiles/ncurseInputlib.dir/build.make CMakeFiles/ncurseInputlib.dir/depend
-	$(MAKE) -f CMakeFiles/ncurseInputlib.dir/build.make CMakeFiles/ncurseInputlib.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/cyang46/repo/cpp-Boot-Camp/group-Project/build/CMakeFiles --progress-num=3,4 "Built target ncurseInputlib"
-.PHONY : CMakeFiles/ncurseInputlib.dir/all
-
-# Include target in all.
-all: CMakeFiles/ncurseInputlib.dir/all
-
-.PHONY : all
-
-# Build rule for subdir invocation for target.
-CMakeFiles/ncurseInputlib.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/cyang46/repo/cpp-Boot-Camp/group-Project/build/CMakeFiles 2
-	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/ncurseInputlib.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/cyang46/repo/cpp-Boot-Camp/group-Project/build/CMakeFiles 0
-.PHONY : CMakeFiles/ncurseInputlib.dir/rule
-
-# Convenience name for target.
-ncurseInputlib: CMakeFiles/ncurseInputlib.dir/rule
-
-.PHONY : ncurseInputlib
-
-# clean rule for target.
-CMakeFiles/ncurseInputlib.dir/clean:
-	$(MAKE) -f CMakeFiles/ncurseInputlib.dir/build.make CMakeFiles/ncurseInputlib.dir/clean
-.PHONY : CMakeFiles/ncurseInputlib.dir/clean
-
-# clean rule for target.
-clean: CMakeFiles/ncurseInputlib.dir/clean
-
-.PHONY : clean
-
-#=============================================================================
-# Target rules for target CMakeFiles/socketCanlib.dir
-
-# All Build rule for target.
-CMakeFiles/socketCanlib.dir/all:
-	$(MAKE) -f CMakeFiles/socketCanlib.dir/build.make CMakeFiles/socketCanlib.dir/depend
-	$(MAKE) -f CMakeFiles/socketCanlib.dir/build.make CMakeFiles/socketCanlib.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/cyang46/repo/cpp-Boot-Camp/group-Project/build/CMakeFiles --progress-num=5,6 "Built target socketCanlib"
-.PHONY : CMakeFiles/socketCanlib.dir/all
-
-# Include target in all.
-all: CMakeFiles/socketCanlib.dir/all
-
-.PHONY : all
-
-# Build rule for subdir invocation for target.
-CMakeFiles/socketCanlib.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/cyang46/repo/cpp-Boot-Camp/group-Project/build/CMakeFiles 2
-	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/socketCanlib.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/cyang46/repo/cpp-Boot-Camp/group-Project/build/CMakeFiles 0
-.PHONY : CMakeFiles/socketCanlib.dir/rule
-
-# Convenience name for target.
-socketCanlib: CMakeFiles/socketCanlib.dir/rule
+socketCanlib: lib/socketCAN/CMakeFiles/socketCanlib.dir/rule
 
 .PHONY : socketCanlib
 
 # clean rule for target.
-CMakeFiles/socketCanlib.dir/clean:
-	$(MAKE) -f CMakeFiles/socketCanlib.dir/build.make CMakeFiles/socketCanlib.dir/clean
-.PHONY : CMakeFiles/socketCanlib.dir/clean
+lib/socketCAN/CMakeFiles/socketCanlib.dir/clean:
+	$(MAKE) -f lib/socketCAN/CMakeFiles/socketCanlib.dir/build.make lib/socketCAN/CMakeFiles/socketCanlib.dir/clean
+.PHONY : lib/socketCAN/CMakeFiles/socketCanlib.dir/clean
 
 # clean rule for target.
-clean: CMakeFiles/socketCanlib.dir/clean
+clean: lib/socketCAN/CMakeFiles/socketCanlib.dir/clean
 
 .PHONY : clean
 
 #=============================================================================
-# Target rules for target CMakeFiles/main.dir
+# Directory level rules for directory App
+
+# Convenience name for "all" pass in the directory.
+App/all: App/InputHandler/all
+App/all: App/Emulator/all
+App/all: App/Avic/all
+
+.PHONY : App/all
+
+# Convenience name for "clean" pass in the directory.
+App/clean: App/InputHandler/clean
+App/clean: App/Emulator/clean
+App/clean: App/Avic/clean
+
+.PHONY : App/clean
+
+# Convenience name for "preinstall" pass in the directory.
+App/preinstall: App/InputHandler/preinstall
+App/preinstall: App/Emulator/preinstall
+App/preinstall: App/Avic/preinstall
+
+.PHONY : App/preinstall
+
+#=============================================================================
+# Directory level rules for directory App/InputHandler
+
+# Convenience name for "all" pass in the directory.
+App/InputHandler/all: App/InputHandler/CMakeFiles/inputHandler.dir/all
+
+.PHONY : App/InputHandler/all
+
+# Convenience name for "clean" pass in the directory.
+App/InputHandler/clean: App/InputHandler/CMakeFiles/inputHandler.dir/clean
+
+.PHONY : App/InputHandler/clean
+
+# Convenience name for "preinstall" pass in the directory.
+App/InputHandler/preinstall:
+
+.PHONY : App/InputHandler/preinstall
+
+#=============================================================================
+# Target rules for target App/InputHandler/CMakeFiles/inputHandler.dir
 
 # All Build rule for target.
-CMakeFiles/main.dir/all: CMakeFiles/ncurseInputlib.dir/all
-CMakeFiles/main.dir/all: CMakeFiles/socketCanlib.dir/all
-	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/depend
-	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/cyang46/repo/cpp-Boot-Camp/group-Project/build/CMakeFiles --progress-num=1,2 "Built target main"
-.PHONY : CMakeFiles/main.dir/all
+App/InputHandler/CMakeFiles/inputHandler.dir/all: lib/socketCAN/CMakeFiles/socketCanlib.dir/all
+	$(MAKE) -f App/InputHandler/CMakeFiles/inputHandler.dir/build.make App/InputHandler/CMakeFiles/inputHandler.dir/depend
+	$(MAKE) -f App/InputHandler/CMakeFiles/inputHandler.dir/build.make App/InputHandler/CMakeFiles/inputHandler.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="/home/cyang46/Documents/CPP BootCamp/Group Project/Team-Treadless_fi/build/CMakeFiles" --progress-num=19,20,21 "Built target inputHandler"
+.PHONY : App/InputHandler/CMakeFiles/inputHandler.dir/all
 
 # Include target in all.
-all: CMakeFiles/main.dir/all
+all: App/InputHandler/CMakeFiles/inputHandler.dir/all
 
 .PHONY : all
 
 # Build rule for subdir invocation for target.
-CMakeFiles/main.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/cyang46/repo/cpp-Boot-Camp/group-Project/build/CMakeFiles 6
-	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/main.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/cyang46/repo/cpp-Boot-Camp/group-Project/build/CMakeFiles 0
-.PHONY : CMakeFiles/main.dir/rule
+App/InputHandler/CMakeFiles/inputHandler.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start "/home/cyang46/Documents/CPP BootCamp/Group Project/Team-Treadless_fi/build/CMakeFiles" 5
+	$(MAKE) -f CMakeFiles/Makefile2 App/InputHandler/CMakeFiles/inputHandler.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start "/home/cyang46/Documents/CPP BootCamp/Group Project/Team-Treadless_fi/build/CMakeFiles" 0
+.PHONY : App/InputHandler/CMakeFiles/inputHandler.dir/rule
 
 # Convenience name for target.
-main: CMakeFiles/main.dir/rule
+inputHandler: App/InputHandler/CMakeFiles/inputHandler.dir/rule
 
-.PHONY : main
-
-# clean rule for target.
-CMakeFiles/main.dir/clean:
-	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/clean
-.PHONY : CMakeFiles/main.dir/clean
+.PHONY : inputHandler
 
 # clean rule for target.
-clean: CMakeFiles/main.dir/clean
+App/InputHandler/CMakeFiles/inputHandler.dir/clean:
+	$(MAKE) -f App/InputHandler/CMakeFiles/inputHandler.dir/build.make App/InputHandler/CMakeFiles/inputHandler.dir/clean
+.PHONY : App/InputHandler/CMakeFiles/inputHandler.dir/clean
+
+# clean rule for target.
+clean: App/InputHandler/CMakeFiles/inputHandler.dir/clean
+
+.PHONY : clean
+
+#=============================================================================
+# Directory level rules for directory App/Emulator
+
+# Convenience name for "all" pass in the directory.
+App/Emulator/all: App/Emulator/CMakeFiles/emulator.dir/all
+
+.PHONY : App/Emulator/all
+
+# Convenience name for "clean" pass in the directory.
+App/Emulator/clean: App/Emulator/CMakeFiles/emulator.dir/clean
+
+.PHONY : App/Emulator/clean
+
+# Convenience name for "preinstall" pass in the directory.
+App/Emulator/preinstall:
+
+.PHONY : App/Emulator/preinstall
+
+#=============================================================================
+# Target rules for target App/Emulator/CMakeFiles/emulator.dir
+
+# All Build rule for target.
+App/Emulator/CMakeFiles/emulator.dir/all: lib/socketCAN/CMakeFiles/socketCanlib.dir/all
+	$(MAKE) -f App/Emulator/CMakeFiles/emulator.dir/build.make App/Emulator/CMakeFiles/emulator.dir/depend
+	$(MAKE) -f App/Emulator/CMakeFiles/emulator.dir/build.make App/Emulator/CMakeFiles/emulator.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="/home/cyang46/Documents/CPP BootCamp/Group Project/Team-Treadless_fi/build/CMakeFiles" --progress-num=14,15,16,17,18 "Built target emulator"
+.PHONY : App/Emulator/CMakeFiles/emulator.dir/all
+
+# Include target in all.
+all: App/Emulator/CMakeFiles/emulator.dir/all
+
+.PHONY : all
+
+# Build rule for subdir invocation for target.
+App/Emulator/CMakeFiles/emulator.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start "/home/cyang46/Documents/CPP BootCamp/Group Project/Team-Treadless_fi/build/CMakeFiles" 7
+	$(MAKE) -f CMakeFiles/Makefile2 App/Emulator/CMakeFiles/emulator.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start "/home/cyang46/Documents/CPP BootCamp/Group Project/Team-Treadless_fi/build/CMakeFiles" 0
+.PHONY : App/Emulator/CMakeFiles/emulator.dir/rule
+
+# Convenience name for target.
+emulator: App/Emulator/CMakeFiles/emulator.dir/rule
+
+.PHONY : emulator
+
+# clean rule for target.
+App/Emulator/CMakeFiles/emulator.dir/clean:
+	$(MAKE) -f App/Emulator/CMakeFiles/emulator.dir/build.make App/Emulator/CMakeFiles/emulator.dir/clean
+.PHONY : App/Emulator/CMakeFiles/emulator.dir/clean
+
+# clean rule for target.
+clean: App/Emulator/CMakeFiles/emulator.dir/clean
+
+.PHONY : clean
+
+#=============================================================================
+# Directory level rules for directory App/Avic
+
+# Convenience name for "all" pass in the directory.
+App/Avic/all: App/Avic/CMakeFiles/avic.dir/all
+
+.PHONY : App/Avic/all
+
+# Convenience name for "clean" pass in the directory.
+App/Avic/clean: App/Avic/CMakeFiles/avic.dir/clean
+App/Avic/clean: App/Avic/CMakeFiles/avic_autogen.dir/clean
+
+.PHONY : App/Avic/clean
+
+# Convenience name for "preinstall" pass in the directory.
+App/Avic/preinstall:
+
+.PHONY : App/Avic/preinstall
+
+#=============================================================================
+# Target rules for target App/Avic/CMakeFiles/avic.dir
+
+# All Build rule for target.
+App/Avic/CMakeFiles/avic.dir/all: App/Avic/CMakeFiles/avic_autogen.dir/all
+	$(MAKE) -f App/Avic/CMakeFiles/avic.dir/build.make App/Avic/CMakeFiles/avic.dir/depend
+	$(MAKE) -f App/Avic/CMakeFiles/avic.dir/build.make App/Avic/CMakeFiles/avic.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="/home/cyang46/Documents/CPP BootCamp/Group Project/Team-Treadless_fi/build/CMakeFiles" --progress-num=1,2,3,4,5,6,7,8,9,10,11,12 "Built target avic"
+.PHONY : App/Avic/CMakeFiles/avic.dir/all
+
+# Include target in all.
+all: App/Avic/CMakeFiles/avic.dir/all
+
+.PHONY : all
+
+# Build rule for subdir invocation for target.
+App/Avic/CMakeFiles/avic.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start "/home/cyang46/Documents/CPP BootCamp/Group Project/Team-Treadless_fi/build/CMakeFiles" 13
+	$(MAKE) -f CMakeFiles/Makefile2 App/Avic/CMakeFiles/avic.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start "/home/cyang46/Documents/CPP BootCamp/Group Project/Team-Treadless_fi/build/CMakeFiles" 0
+.PHONY : App/Avic/CMakeFiles/avic.dir/rule
+
+# Convenience name for target.
+avic: App/Avic/CMakeFiles/avic.dir/rule
+
+.PHONY : avic
+
+# clean rule for target.
+App/Avic/CMakeFiles/avic.dir/clean:
+	$(MAKE) -f App/Avic/CMakeFiles/avic.dir/build.make App/Avic/CMakeFiles/avic.dir/clean
+.PHONY : App/Avic/CMakeFiles/avic.dir/clean
+
+# clean rule for target.
+clean: App/Avic/CMakeFiles/avic.dir/clean
+
+.PHONY : clean
+
+#=============================================================================
+# Target rules for target App/Avic/CMakeFiles/avic_autogen.dir
+
+# All Build rule for target.
+App/Avic/CMakeFiles/avic_autogen.dir/all:
+	$(MAKE) -f App/Avic/CMakeFiles/avic_autogen.dir/build.make App/Avic/CMakeFiles/avic_autogen.dir/depend
+	$(MAKE) -f App/Avic/CMakeFiles/avic_autogen.dir/build.make App/Avic/CMakeFiles/avic_autogen.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="/home/cyang46/Documents/CPP BootCamp/Group Project/Team-Treadless_fi/build/CMakeFiles" --progress-num=13 "Built target avic_autogen"
+.PHONY : App/Avic/CMakeFiles/avic_autogen.dir/all
+
+# Build rule for subdir invocation for target.
+App/Avic/CMakeFiles/avic_autogen.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start "/home/cyang46/Documents/CPP BootCamp/Group Project/Team-Treadless_fi/build/CMakeFiles" 1
+	$(MAKE) -f CMakeFiles/Makefile2 App/Avic/CMakeFiles/avic_autogen.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start "/home/cyang46/Documents/CPP BootCamp/Group Project/Team-Treadless_fi/build/CMakeFiles" 0
+.PHONY : App/Avic/CMakeFiles/avic_autogen.dir/rule
+
+# Convenience name for target.
+avic_autogen: App/Avic/CMakeFiles/avic_autogen.dir/rule
+
+.PHONY : avic_autogen
+
+# clean rule for target.
+App/Avic/CMakeFiles/avic_autogen.dir/clean:
+	$(MAKE) -f App/Avic/CMakeFiles/avic_autogen.dir/build.make App/Avic/CMakeFiles/avic_autogen.dir/clean
+.PHONY : App/Avic/CMakeFiles/avic_autogen.dir/clean
+
+# clean rule for target.
+clean: App/Avic/CMakeFiles/avic_autogen.dir/clean
 
 .PHONY : clean
 

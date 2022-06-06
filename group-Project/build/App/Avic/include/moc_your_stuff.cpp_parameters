@@ -1,0 +1,5 @@
+-I/home/cyang46/Documents/CPP BootCamp/Group Project/Team-Treadless_fi/App/Avic
+-I/home/cyang46/Documents/CPP BootCamp/Group Project/Team-Treadless_fi/build/App/Avic
+-o
+/home/cyang46/Documents/CPP BootCamp/Group Project/Team-Treadless_fi/build/App/Avic/include/moc_your_stuff.cpp
+/home/cyang46/Documents/CPP BootCamp/Group Project/Team-Treadless_fi/App/Avic/include/your_stuff.h

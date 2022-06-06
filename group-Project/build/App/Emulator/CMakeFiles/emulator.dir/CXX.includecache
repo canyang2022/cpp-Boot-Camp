@@ -1,0 +1,54 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../App/Emulator/include/emulator.h
+iostream
+-
+future
+-
+thread
+-
+reader.h
+../App/Emulator/include/reader.h
+
+../App/Emulator/include/reader.h
+atomic
+-
+mutex
+-
+socketcan_cpp.h
+../App/Emulator/include/socketcan_cpp.h
+
+../lib/socketCAN/include/socketcan_cpp.h
+string
+-
+linux/can.h
+-
+
+/home/cyang46/Documents/CPP BootCamp/Group Project/Team-Treadless_fi/App/Emulator/main.cpp
+iostream
+-
+thread
+-
+emulator.h
+-
+
+/home/cyang46/Documents/CPP BootCamp/Group Project/Team-Treadless_fi/App/Emulator/src/CAN_reader.cpp
+reader.h
+/home/cyang46/Documents/CPP BootCamp/Group Project/Team-Treadless_fi/App/Emulator/src/reader.h
+emulator.h
+/home/cyang46/Documents/CPP BootCamp/Group Project/Team-Treadless_fi/App/Emulator/src/emulator.h
+
+/home/cyang46/Documents/CPP BootCamp/Group Project/Team-Treadless_fi/App/Emulator/src/decoding.cpp
+emulator.h
+/home/cyang46/Documents/CPP BootCamp/Group Project/Team-Treadless_fi/App/Emulator/src/emulator.h
+
+/home/cyang46/Documents/CPP BootCamp/Group Project/Team-Treadless_fi/App/Emulator/src/emulator.cpp
+emulator.h
+/home/cyang46/Documents/CPP BootCamp/Group Project/Team-Treadless_fi/App/Emulator/src/emulator.h
+
