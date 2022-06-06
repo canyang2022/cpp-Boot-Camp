@@ -8,8 +8,8 @@
 
 
 
-const static int min_throttle = -20;
-const static int max_throttle = 20;
+const static int min_throttle = -100;
+const static int max_throttle = 100;
 const static int drive = 100;
 const static int neutral = 110;
 const static int off = 111;
